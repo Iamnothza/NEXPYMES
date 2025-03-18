@@ -667,6 +667,16 @@ body {
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.acordeon-header::after {
+    content: '\25B6'; /* Flecha derecha */
+    transition: transform 0.3s;
+}
+.acordeon-header.active::after {
+    transform: rotate(90deg); /* Flecha abajo */
 }
 .acordeon-content {
     display: none;

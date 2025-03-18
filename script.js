@@ -93,16 +93,13 @@ new Chart(ctx2, {
         }
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.acordeon-header').forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.nextElementSibling;
 
-document.querySelectorAll('.acordeon-header').forEach(item => {
-    item.addEventListener('click', () => {
-        const content = item.nextElementSibling;
-        const isActive = content.style.display === 'block';
-        document.querySelectorAll('.acordeon-content').forEach(c => c.style.display = 'none');
-        document.querySelectorAll('.acordeon-header').forEach(h => h.classList.remove('active'));
-        if (!isActive) {
-            content.style.display = 'block';
-            item.classList.add('active');
-        }
+            content.classList.toggle('open');
+            item.classList.toggle('active');
+        });
     });
 });

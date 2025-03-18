@@ -194,6 +194,7 @@ body{
 .top-container .status .items-list .item .info p{
     font-size: 12px;
     font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .top-container .status .items-list .item .info > i{
@@ -226,19 +227,6 @@ body{
     font-size: 22px;
     font-weight: 600;
 }
-
-.top-container .status .items-list .item:nth-child(2) .progress{
-    background: #d6d3d1;
-}
-
-.top-container .status .items-list .item:nth-child(2) .progress .bar{
-    width: 65%;
-}
-
-.top-container .status .items-list .item:nth-child(2) .progress::before{
-    content: "65%";
-}
-
 
 .top-container .status .items-list .item:nth-child(3) .progress{
     background: #94a3b8;
@@ -651,17 +639,19 @@ body{
     margin-bottom: 15px;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 10px;
 }
 
 .acordeon {
     max-width: 600px;
     margin: auto;
+
 }
-.acordeon-item {
-    border-bottom: 1px solid #ddd;
-}
+
 .acordeon-header {
     background: #f4f4f4;
     padding: 10px;
@@ -670,16 +660,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid #ccc;
 }
+.acordeon-header:hover {
+    background: #ddd;
+}
+
+.acordeon-header.active {
+    background: #bbb;
+}
+
+.acordeon-content.open {
+    max-height: 500px;
+    padding: 10px;
+}
+
 .acordeon-header::after {
-    content: '\25B6'; /* Flecha derecha */
+    content: '+';
+    font-size: 25px;
     transition: transform 0.3s;
 }
 .acordeon-header.active::after {
-    transform: rotate(90deg); /* Flecha abajo */
-}
-.acordeon-content {
-    display: none;
-    padding: 10px;
-    background: #fff;
+    transform: rotate(45deg);
 }

@@ -650,3 +650,26 @@ body{
 .about-section ul li {
     margin-bottom: 15px;
 }
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.acordeon {
+    max-width: 600px;
+    margin: auto;
+}
+.acordeon-item {
+    border-bottom: 1px solid #ddd;
+}
+.acordeon-header {
+    background: #f4f4f4;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.acordeon-content {
+    display: none;
+    padding: 10px;
+    background: #fff;
+}
